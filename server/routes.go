@@ -728,6 +728,7 @@ func ListModelsHandler(c *gin.Context) {
 			resp, err := modelResponse(tag)
 			if err != nil {
 				log.Printf("skipping file: %s", fp)
+				// nolint: nilerr
 				return nil
 			}
 

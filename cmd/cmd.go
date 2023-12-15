@@ -839,9 +839,7 @@ func generateInteractive(cmd *cobra.Command, opts generateOptions) error {
 						continue
 					}
 					var params []string
-					for _, p := range args[3:] {
-						params = append(params, p)
-					}
+					params = append(params, args[3:]...)
 					fp, err := api.FormatParams(map[string][]string{args[2]: params})
 					if err != nil {
 						fmt.Printf("Couldn't set parameter: %q\n\n", err)
